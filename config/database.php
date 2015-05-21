@@ -55,7 +55,7 @@ return [
 		'mysql' => [
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'lara',
+			'database'  => 'blog',
 			'username'  => 'root',
 			'password'  => '', 
 			'charset'   => 'utf8',
