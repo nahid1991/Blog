@@ -10,6 +10,22 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+interface BarInterface{}
+
+class Bar implements BarInterface{}
+
+App::bind('BarInterface', 'Bar');
+
+
+Route::get('bar', function(BarInterface $bar)
+{
+    App::make('BarInterface');
+
+    dd($bar);
+});
+
+
 Route::get('/', function()
 {
     return 'Home Page';
@@ -39,3 +55,5 @@ Route::get('foo', ['middleware' => 'manager', function()
 {
     return 'This page only be viewed by a manager';
 }]);
+
+Route::get('tags/{tags}', 'TagsController@show');

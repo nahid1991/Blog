@@ -37,12 +37,13 @@ class ArticlesController extends Controller {
 	{
 		$articles = Article::latest('published_at')->published()->get();
 
-		return view('articles.index', compact('articles'));
+        $latest = Article::latest()->first();
+
+		return view('articles.index', compact('articles', 'latest'));
 	}
 
 	public function show(Article $article)
 	{
-
 		//dd($article->published_at->diffForHumans());
 
 		return view('articles.show', compact('article'));

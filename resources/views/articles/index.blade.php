@@ -9,10 +9,6 @@
 
 	<hr/>
 
-	<a href="articles/create">Create a article.</a>
-
-	<hr/>
-
 	@foreach($articles as $article)
 		<article>
 			<h1><a href="{{  action('ArticlesController@show', [$article->id]) }}">{{  $article->title }}</a></h1>
